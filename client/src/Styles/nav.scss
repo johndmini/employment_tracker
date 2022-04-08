@@ -24,6 +24,12 @@
     display: none;
   }
 
+  .navMobile-container {
+      background-color: rgb(192, 185, 185);
+      border-radius: 10px;
+      margin-bottom: 10px;
+  }
+
   nav {
     display: flex;
     align-items: center;
@@ -40,7 +46,7 @@
         height: 4px;
         margin: 2px;
         border-radius: 2px;
-        transition: all ease 0.5s;
+        transition: all ease 0.3s;
       }
 
       .open:nth-child(1) {
@@ -69,14 +75,22 @@
     }
   }
 
-  .mobile-links {
-      display: flex;
-      justify-content: flex-start;
-      list-style: none;
+  .links-container {
+      padding: 10px;
 
       button {
           background-color: $buttoncolor;
           color: white;
+      }
+
+      ul {
+          padding: 0;
+          margin: 2px;
+          list-style-type: none;
+
+          li {
+              margin: 2px;
+          }
       }
   }
 }

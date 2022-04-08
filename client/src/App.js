@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import Nav from './components/nav';
 import NavMobile from './components/navmobile';
+import Functions from './components/functionsBar';
+import Main from './pages/main';
 import './Styles/employeelist.css';
 import axios from 'axios';
 
 export default function App() {
   const [employees, setEmployees] = useState([]);
-  console.log(employees);
 
   const getAllEmployees = () => {
     axios
@@ -45,35 +46,12 @@ export default function App() {
     getAllEmployees();
   }, []);
 
-  const employeeList = employees.map((employee) => (
-    <div key={employee._id}>
-      <div className="employee-container">
-        <p>
-          <strong>Full Name: </strong>
-          {employee.firstName} {employee.lastName}
-        </p>
-        <p>
-          <strong>ID:</strong> {employee._id}
-        </p>
-        <p>
-          <strong>Email: </strong>
-          {employee.email}
-        </p>
-        <p>
-          <strong>Phone: </strong>
-          {employee.phone}
-        </p>
-        <button>Employee Page</button>
-        <button>Print ID Badge</button>
-      </div>
-    </div>
-  ));
-
   return (
     <div>
       <Nav />
       <NavMobile />
-      {employeeList}
+      <Functions />
+      <Main employees={employees} />
     </div>
   );
 }

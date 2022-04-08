@@ -3,9 +3,9 @@ import '../Styles/nav.css';
 
 export default function NavMobile() {
   const [navToggle, setNavToggle] = useState('close');
-  console.log(navToggle);
+
   return (
-    <nav>
+    <nav className="navMobile-container">
       <div
         className="nav-mobile"
         role="button"
@@ -15,7 +15,7 @@ export default function NavMobile() {
         <i className={navToggle}></i>
         <i className={navToggle}></i>
       </div>
-      { navToggle === 'open' && <div className='mobile-links-container'>
+      { navToggle === 'open' && <div className='links-container'>
           <ul className='mobile-links'>
               <li><button>Master Tracker</button></li>
               <li><button>Add New Employee</button></li>
