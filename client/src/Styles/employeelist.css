@@ -1,0 +1,10 @@
+.employee-container {
+  font-family: Trebuchet MS, Tahoma, Verdana, Arial, sans-serif;
+  border: 1px solid grey;
+  display: inline-block;
+  border-radius: 10px;
+  width: 350px;
+  padding: 5px;
+  margin: 5px;
+}
+/*# sourceMappingURL=employeelist.css.map */

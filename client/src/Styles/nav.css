@@ -1,0 +1,24 @@
+.nav-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.nav {
+  display: inline-block;
+  font-family: Trebuchet MS, Tahoma, Verdana, Arial, sans-serif;
+}
+
+.nav button {
+  background-color: #2471a4;
+  color: white;
+  margin: 5px;
+  height: 35px;
+  width: 150px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+/*# sourceMappingURL=nav.css.map */
