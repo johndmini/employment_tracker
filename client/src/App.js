@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Nav from './components/nav';
+import NavMobile from './components/navmobile';
 import './Styles/employeelist.css';
 import axios from 'axios';
 
@@ -51,7 +52,6 @@ export default function App() {
           <strong>Full Name: </strong>
           {employee.firstName} {employee.lastName}
         </p>
-
         <p>
           <strong>ID:</strong> {employee._id}
         </p>
@@ -72,6 +72,7 @@ export default function App() {
   return (
     <div>
       <Nav />
+      <NavMobile />
       {employeeList}
     </div>
   );

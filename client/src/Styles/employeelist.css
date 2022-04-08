@@ -3,8 +3,14 @@
   border: 1px solid grey;
   display: inline-block;
   border-radius: 10px;
-  width: 350px;
+  width: 330px;
   padding: 5px;
   margin: 5px;
+}
+
+.employee-container button {
+  background-color: #2471a4;
+  color: white;
+  margin: 2px;
 }
 /*# sourceMappingURL=employeelist.css.map */
