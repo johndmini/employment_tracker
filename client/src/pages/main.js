@@ -1,10 +1,13 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function Main(props) {
   const { employees } = props;
 
+  const navigate = useNavigate();
+
   const employeeList = employees.map((employee) => (
-    <div id='main' key={employee._id}>
+    <div key={employee._id}>
       <div className="employee-container">
         <p>
           <strong>Full Name: </strong>
@@ -21,8 +24,20 @@ export default function Main(props) {
           <strong>Phone: </strong>
           {employee.phone}
         </p>
-        <button>Employee Page</button>
-        <button>Print ID Badge</button>
+        <button
+          onClick={() => {
+            navigate('/targetemployee');
+          }}
+        >
+          Employee Page
+        </button>
+        <button
+          onClick={() => {
+            navigate('/printbadge');
+          }}
+        >
+          Print ID Badge
+        </button>
       </div>
     </div>
   ));

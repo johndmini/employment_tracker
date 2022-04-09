@@ -25,9 +25,10 @@
   }
 
   .navMobile-container {
-      background-color: rgb(192, 185, 185);
-      border-radius: 10px;
-      margin-bottom: 10px;
+    background-color: rgb(192, 185, 185);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    width: 250px;
   }
 
   nav {
@@ -39,6 +40,7 @@
       display: flex;
       flex-direction: column;
       padding-left: 8px;
+      cursor: pointer;
 
       i {
         background-color: rgb(36, 113, 164);
@@ -50,47 +52,48 @@
       }
 
       .open:nth-child(1) {
-          transform: rotate(45deg) translateY(16px);
+        transform: rotate(45deg) translateY(16px);
       }
 
       .open:nth-child(2) {
-          opacity: 0;
+        opacity: 0;
       }
 
       .open:nth-child(3) {
-          transform: rotate(-45deg) translateY(-16px);
+        transform: rotate(-45deg) translateY(-16px);
       }
 
       .close:nth-child(1) {
-          transform: rotate(0) translateY(0);  
+        transform: rotate(0) translateY(0);
       }
 
       .close:nth-child(2) {
-          opacity: 1;
+        opacity: 1;
       }
 
       .close:nth-child(3) {
-          transform: rotate(0) translateY(0); 
+        transform: rotate(0) translateY(0);
       }
     }
   }
 
   .links-container {
-      padding: 10px;
+    padding: 10px;
+    
+    button {
+        background-color: $buttoncolor;
+        color: white;
+        cursor: pointer;
+    }
 
-      button {
-          background-color: $buttoncolor;
-          color: white;
+    ul {
+      padding: 0;
+      margin: 2px;
+      list-style-type: none;
+
+      li {
+        margin: 2px;
       }
-
-      ul {
-          padding: 0;
-          margin: 2px;
-          list-style-type: none;
-
-          li {
-              margin: 2px;
-          }
-      }
+    }
   }
 }

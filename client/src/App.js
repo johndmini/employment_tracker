@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Nav from './components/nav';
 import NavMobile from './components/navmobile';
 import Functions from './components/functionsBar';
 import Main from './pages/main';
-import './Styles/employeelist.css';
+import NewEmployeePage from './pages/addEmployeePage';
+import TargetEmployee from './pages/employeePage';
+import Badge from './pages/printBadge';
 import axios from 'axios';
+import './Styles/employeelist.css';
 
 export default function App() {
   const [employees, setEmployees] = useState([]);
@@ -48,10 +52,17 @@ export default function App() {
 
   return (
     <div>
-      <Nav />
-      <NavMobile />
-      <Functions />
-      <Main employees={employees} />
+      <BrowserRouter>
+        <Nav />
+        <NavMobile />
+        <Functions />
+        <Routes>
+          <Route path="/" element={<Main employees={employees} />} />
+          <Route path="/newemployee" element={<NewEmployeePage />} />
+          <Route path="/targetemployee" element={<TargetEmployee/>} />
+          <Route path="/printbadge" element={<Badge />}/>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

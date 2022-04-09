@@ -30,6 +30,7 @@
     background-color: #c0b9b9;
     border-radius: 10px;
     margin-bottom: 10px;
+    width: 250px;
   }
   nav {
     display: -webkit-box;
@@ -49,6 +50,7 @@
         -ms-flex-direction: column;
             flex-direction: column;
     padding-left: 8px;
+    cursor: pointer;
   }
   nav .nav-mobile i {
     background-color: #2471a4;
@@ -87,6 +89,7 @@
   .links-container button {
     background-color: #2471a4;
     color: white;
+    cursor: pointer;
   }
   .links-container ul {
     padding: 0;
