@@ -35,6 +35,17 @@ export default function TargetEmployee(props) {
     });
   };
 
+  const deleteEmployee = (id) => {
+    axios
+      .delete(`/employees/${id}`)
+      .then((res) =>
+        setEmployees((prevState) =>
+          prevState.filter((employee) => employee._id !== id)
+        )
+      )
+      .catch((err) => console.log(err));
+  };
+
   return (
     <div>
       <div>
@@ -54,7 +65,16 @@ export default function TargetEmployee(props) {
           {!editToggle ? 'Edit Info' : 'Close'}
         </button>
         <button disabled={editToggle === true}>Print Badge</button>
-        <button disabled={editToggle === true}>Terminate Employee</button>
+        <button
+          disabled={editToggle === true}
+          onClick={() => {
+            deleteEmployee(state._id);
+            navigate('/');
+            alert('Employee Terminated');
+          }}
+        >
+          Terminate Employee
+        </button>
       </div>
       {editToggle && (
         <div>

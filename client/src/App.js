@@ -20,17 +20,6 @@ export default function App() {
       .catch((err) => console.log(err));
   };
 
-  const deleteEmployee = (id) => {
-    axios
-      .delete(`/employees/${id}`)
-      .then((res) =>
-        setEmployees((prevState) =>
-          prevState.filter((employee) => employee._id !== id)
-        )
-      )
-      .catch((err) => console.log(err));
-  };
-
   useEffect(() => {
     getAllEmployees();
   }, []);
