@@ -20,13 +20,6 @@ export default function App() {
       .catch((err) => console.log(err));
   };
 
-  const addEmployee = (newEmployee) => {
-    axios
-      .post('/employees', newEmployee)
-      .then((res) => setEmployees((prevState) => [...prevState, res.data]))
-      .catch((err) => console.log(err));
-  };
-
   const deleteEmployee = (id) => {
     axios
       .delete(`/employees/${id}`)
@@ -38,31 +31,27 @@ export default function App() {
       .catch((err) => console.log(err));
   };
 
-  const updateEmployee = (id, newUpdates) => {
-    axios.put(`/employees/${id}`, newUpdates).then((res) => {
-      setEmployees((prevState) =>
-        prevState.map((employee) => (employee._id !== id ? employee : res.data))
-      ).catch((err) => console.log(err));
-    });
-  };
-
   useEffect(() => {
     getAllEmployees();
   }, []);
 
   return (
-    <div>
-      <BrowserRouter>
-        <Nav />
-        <NavMobile />
-        <Functions />
-        <Routes>
-          <Route path="/" element={<Main employees={employees} />} />
-          <Route path="/newemployee" element={<NewEmployeePage />} />
-          <Route path="/targetemployee" element={<TargetEmployee/>} />
-          <Route path="/printbadge" element={<Badge />}/>
-        </Routes>
-      </BrowserRouter>
-    </div>
+    <BrowserRouter>
+      <Nav />
+      <NavMobile />
+      <Functions />
+      <Routes>
+        <Route path="/" element={<Main employees={employees} />} />
+        <Route
+          path="/newemployee"
+          element={<NewEmployeePage setEmployees={setEmployees} />}
+        />
+        <Route
+          path="/targetemployee"
+          element={<TargetEmployee employees={employees} setEmployees={setEmployees} />}
+        />
+        <Route path="/printbadge" element={<Badge />} />
+      </Routes>
+    </BrowserRouter>
   );
 }

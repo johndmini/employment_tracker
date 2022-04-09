@@ -2,9 +2,14 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export default function Main(props) {
-  const { employees } = props;
-
-  const navigate = useNavigate();
+    const { employees } = props;
+    
+    const navigate = useNavigate();
+    
+    const targetEmployee = (employee) => {
+        const targetEmployee = employee
+        navigate('/targetemployee', { state : targetEmployee });
+    }
 
   const employeeList = employees.map((employee) => (
     <div key={employee._id}>
@@ -26,7 +31,8 @@ export default function Main(props) {
         </p>
         <button
           onClick={() => {
-            navigate('/targetemployee');
+            targetEmployee(employee);
+            ;
           }}
         >
           Employee Page

@@ -19,6 +19,10 @@
   }
 }
 
+nav {
+    display: none;
+}
+
 @media screen and (max-width: 600px) {
   .nav {
     display: none;
@@ -79,18 +83,17 @@
 
   .links-container {
     padding: 10px;
-    
+    cursor: pointer;
+
     button {
-        background-color: $buttoncolor;
-        color: white;
-        cursor: pointer;
+      background-color: $buttoncolor;
+      color: white;
     }
 
     ul {
       padding: 0;
       margin: 2px;
       list-style-type: none;
-
       li {
         margin: 2px;
       }
