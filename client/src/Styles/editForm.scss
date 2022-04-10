@@ -19,22 +19,21 @@
 }
 
 .edit-form {
-    div {
-        display: inline-block;
-        margin: 5px;
-    }
+  div {
+    display: inline-block;
+    margin: 5px;
+  }
 
-    button {
-        display: block;
-    }
+  button {
+    display: block;
+  }
 }
 
 @media screen and (max-width: 600px) {
-    .targetemployee-container {
-        width: 330px;
-    }
+  .targetemployee-container {
+    width: 330px;
+  }
 
-    
   .edit-form {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -44,7 +43,6 @@
     -ms-flex-direction: column;
     flex-direction: column;
 
-    
     label {
       width: 150px;
     }

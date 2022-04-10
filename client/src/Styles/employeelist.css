@@ -16,6 +16,10 @@
   cursor: pointer;
 }
 
+.employee-container h5 {
+  color: red;
+}
+
 @media screen and (max-width: 600px) {
   .edit-form {
     display: -webkit-box;

@@ -1,77 +1,77 @@
 @import '../Variables/Variables.scss';
 
 .functionsBar-container {
+  display: inline-block;
+  width: 100%;
+  align-content: center;
+
+  button {
+    background-color: $buttoncolor;
+    font-family: $font-stack;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    margin: 2px;
+  }
+
+  input {
     display: inline-block;
-    width: 100%;
-    align-content: center;
+    border-radius: 10px;
+    margin: 2px;
+  }
 
-    button {
-        background-color: $buttoncolor;
-        font-family: $font-stack;
-        border-radius: 10px;
-        color: white;
-        cursor: pointer;
-        margin: 2px;
-    }
-
-    input {
-        display: inline-block;
-        border-radius: 10px;
-        margin: 2px;
-    }
-
-    h5 {
-        font-family: $font-stack;
-        margin: 0;
-    }
+  h5 {
+    font-family: $font-stack;
+    margin: 0;
+  }
 }
 
 .functions-select {
-    margin: 2px;
-    border-radius: 10px;
-    align-content: center;
-    display: inline-block;
+  margin: 2px;
+  border-radius: 10px;
+  align-content: center;
+  display: inline-block;
 }
 
 .functions-category {
-    display: inline-block;
+  display: inline-block;
 }
 
 .functions-search {
-    display: inline-block;
+  display: inline-block;
 }
 
 @media screen and (max-width: 600px) {
-    .functionsBar-container {
-        button {
-            background-color: $buttoncolor;
-            font-family: $font-stack;
-            border-radius: 10px;
-            color: white;
-            cursor: pointer;
-            margin: 2px;
-        }
-    
-        input {
-            border-radius: 10px;
-            margin: 2px;
-        }
-    
-        h5 {
-            font-family: $font-stack;
-            margin: 0;
-        }
+  .functionsBar-container {
+    button {
+      background-color: $buttoncolor;
+      font-family: $font-stack;
+      border-radius: 10px;
+      color: white;
+      cursor: pointer;
+      margin: 2px;
     }
-    
-    .functions-select {
-        margin: 2px;
-        border-radius: 10px;
+
+    input {
+      border-radius: 10px;
+      margin: 2px;
     }
-    .functions-category {
-        display: block;
-        margin: 0;
+
+    h5 {
+      font-family: $font-stack;
+      margin: 0;
     }
-    .functions-search {
-        display: block;
-    }
+  }
+
+  .functions-select {
+    margin: 2px;
+    border-radius: 10px;
+  }
+  .functions-category {
+    display: block;
+    margin: 0;
+  }
+  .functions-search {
+    display: block;
+  }
 }

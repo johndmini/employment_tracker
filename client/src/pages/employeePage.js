@@ -11,6 +11,7 @@ export default function TargetEmployee(props) {
   const target = employees.find((employee) => employee._id === employeeId);
 
   const prevInfo = {
+    _id: target._id,
     firstName: target.firstName,
     lastName: target.lastName,
     email: target.email,
@@ -61,6 +62,9 @@ export default function TargetEmployee(props) {
     <div className="targetemployee-container">
       <div className="employee-snapshot">
         <p>
+          <strong>ID:</strong> {prevInfo._id.toUpperCase()}
+        </p>
+        <p>
           <strong>First Name:</strong> {prevInfo.firstName}
         </p>
         <p>
@@ -97,6 +101,7 @@ export default function TargetEmployee(props) {
             lastName={newInfo.lastName}
             email={newInfo.email}
             phone={newInfo.phone}
+            department={newInfo.department}
             handleChange={handleChange}
             onSubmit={() => {
               updateEmployee(target._id, newInfo);

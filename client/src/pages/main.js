@@ -9,12 +9,13 @@ export default function Main(props) {
 
   const employeeList = employees.map((employee) => (
     <div className="employee-container" key={employee._id}>
+      <h5>Additional Info Required: Update Employee Page</h5>
       <p>
         <strong>Full Name: </strong>
         {employee.firstName} {employee.lastName}
       </p>
       <p>
-        <strong>ID:</strong> {employee._id}
+        <strong>ID:</strong> {employee._id.toUpperCase()}
       </p>
       <p>
         <strong>Email: </strong>

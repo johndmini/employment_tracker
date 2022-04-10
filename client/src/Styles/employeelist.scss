@@ -1,40 +1,42 @@
 @import '../Variables/Variables.scss';
 
 .employee-container {
-    font-family: $font-stack;
-    border: 1px solid grey;
-    display: inline-block;
-    border-radius: 10px;
-    width: 330px;
-    padding: 5px;
-    margin: 5px;
-    
+  font-family: $font-stack;
+  border: 1px solid grey;
+  display: inline-block;
+  border-radius: 10px;
+  width: 330px;
+  padding: 5px;
+  margin: 5px;
 
-    button {
-        background-color: $buttoncolor;
-        border-radius: 10px;
-        color: white;
-        margin: 2px;
-        cursor: pointer;
-    }
+  button {
+    background-color: $buttoncolor;
+    border-radius: 10px;
+    color: white;
+    margin: 2px;
+    cursor: pointer;
+  }
+
+  h5 {
+    color: red;
+  }
 }
 
 @media screen and (max-width: 600px) {
-    .edit-form {
-        display: flex;
-        flex-direction: column;
+  .edit-form {
+    display: flex;
+    flex-direction: column;
 
-        label {
-            width: 150px;
-        }
-
-        input {
-            width: 300px;
-        }
-
-        button {
-            width: 150px;
-        }
+    label {
+      width: 150px;
     }
 
+    input {
+      width: 300px;
+    }
+
+    button {
+      width: 150px;
+    }
+  }
 }
