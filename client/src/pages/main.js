@@ -9,7 +9,14 @@ export default function Main(props) {
 
   const employeeList = employees.map((employee) => (
     <div className="employee-container" key={employee._id}>
-      <h5>Additional Info Required: Update Employee Page</h5>
+      {(!employee.address || !employee.department) && (
+        <h5>
+          Additional Info Required:
+          <p>{!employee.address && '* Mailing Address'}</p>
+          <p>{!employee.department && '* Department'}</p>
+          <p>{!employee.emergencyContactPhone && '* Emergency Contact'}</p>
+        </h5>
+      )}
       <p>
         <strong>Full Name: </strong>
         {employee.firstName} {employee.lastName}

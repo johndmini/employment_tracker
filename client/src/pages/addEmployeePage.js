@@ -13,7 +13,7 @@ export default function NewEmployeePage(props) {
   };
 
   const [newEmployee, setNewEmployee] = useState(initialInput);
-  
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setNewEmployee((prevState) => ({ ...prevState, [name]: value }));

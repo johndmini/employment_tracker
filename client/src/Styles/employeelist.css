@@ -4,6 +4,8 @@
   display: inline-block;
   border-radius: 10px;
   width: 330px;
+  height: 360px auto;
+  overflow: scroll;
   padding: 5px;
   margin: 5px;
 }
@@ -21,6 +23,9 @@
 }
 
 @media screen and (max-width: 600px) {
+  .employee-container {
+    height: auto;
+  }
   .edit-form {
     display: -webkit-box;
     display: -ms-flexbox;

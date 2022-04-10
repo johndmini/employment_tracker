@@ -44,14 +44,67 @@ export default function Edit(props) {
         </label>
       </div>
       <div>
-          <label>
-              Department:
-              <input 
-              name="department"
-              value={props.department}
-              onChange={props.handleChange}
-              />
-          </label>
+        <label>
+          Department:
+          <select onChange={props.handleSelect}>
+            <option value="IT Development">IT Development</option>
+            <option value="IT Maintenance">IT Maintenance</option>
+            <option value="IT QA/QC">IT QA/QC</option>
+          </select>
+        </label>
+      </div>
+      <div>
+        <label>
+          Mailing Address:
+          <input
+            name="address"
+            value={props.address}
+            onChange={props.handleChange}
+          />
+        </label>
+      </div>
+      <div>
+        <h5>Emergency Contact:</h5>
+        <label>
+          First Name:
+          <input
+            name="emergencyContactFirstName"
+            value={props.emergencyFirstName}
+            onChange={props.handleChange}
+          />
+        </label>
+        <label>
+          Last Name:
+          <input
+            name="emergencyContactLastName"
+            value={props.emergencyLastName}
+            onChange={props.handleChange}
+          />
+        </label>
+        <label>
+          Phone Number:
+          <input
+            name="emergencyContactPhone"
+            value={props.emergencyPhone}
+            onChange={props.handleChange}
+          />
+        </label>
+        <label>
+          Address:
+          <input
+            name="emergencyContactAddress"
+            value={props.emergencyAddress}
+            onChange={props.handleChange}
+          />
+        </label>
+        <label>
+          Relationship:
+          <input
+            name="emergencyContactRelationship"
+            value={props.emergencyRelationship}
+            onChange={props.handleChange}
+          />
+        </label>
       </div>
       <button>Save Changes</button>
     </form>

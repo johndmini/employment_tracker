@@ -9,7 +9,6 @@ export default function TargetEmployee(props) {
   const { employees, setEmployees } = props;
   const [editToggle, setEditToggle] = useState(false);
   const target = employees.find((employee) => employee._id === employeeId);
-
   const prevInfo = {
     _id: target._id,
     firstName: target.firstName,
@@ -17,6 +16,13 @@ export default function TargetEmployee(props) {
     email: target.email,
     phone: target.phone,
     department: target.department,
+    address: target.address,
+    emergencyContactFirstName: target.emergencyContactFirstName,
+    emergencyContactLastName: target.emergencyContactLastName,
+    emergencyContactPhone: target.emergencyContactPhone,
+    emergencyContactEmail: target.emergencyContactEmail,
+    emergencyContactAddress: target.emergencyContactAddress,
+    emergencyContactRelationship: target.emergencyContactRelationship,
   };
   const [newInfo, setNewInfo] = useState(prevInfo);
 
@@ -29,6 +35,10 @@ export default function TargetEmployee(props) {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setNewInfo((prevState) => ({ ...prevState, [name]: value }));
+  };
+
+  const handleSelect = (e) => {
+    setNewInfo((prevState) => ({ ...prevState, department: e.target.value }));
   };
 
   const updateEmployee = async (id, newUpdates) => {
@@ -102,7 +112,15 @@ export default function TargetEmployee(props) {
             email={newInfo.email}
             phone={newInfo.phone}
             department={newInfo.department}
+            address={newInfo.address}
+            emergencyFirstName={newInfo.emergencyContactFirstName}
+            emergencyLastName={newInfo.emergencyContactLastName}
+            emergencyPhone={newInfo.emergencyContactPhone}
+            emergencyEmail={newInfo.emergencyContactEmail}
+            emergencyAddress={newInfo.emergencyContactAddress}
+            emergencyRelationship={newInfo.emergencyContactRelationship}
             handleChange={handleChange}
+            handleSelect={handleSelect}
             onSubmit={() => {
               updateEmployee(target._id, newInfo);
               handleEdit();

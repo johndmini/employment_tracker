@@ -21,11 +21,16 @@
 .edit-form {
   div {
     display: inline-block;
+    width: 330px;
     margin: 5px;
   }
 
   button {
     display: block;
+  }
+
+  input {
+      width: 350px;
   }
 }
 

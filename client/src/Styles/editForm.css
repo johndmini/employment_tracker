@@ -18,11 +18,16 @@
 
 .edit-form div {
   display: inline-block;
+  width: 330px;
   margin: 5px;
 }
 
 .edit-form button {
   display: block;
+}
+
+.edit-form input {
+  width: 350px;
 }
 
 @media screen and (max-width: 600px) {
