@@ -1,71 +1,50 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Menu, MenuItem, Fade, IconButton, Link } from '@mui/material';
+import { Menu as MenuIcon } from '@mui/icons-material';
 import '../Styles/nav.css';
 
-let useClickOut = (handler) => {
-  let ref = useRef();
-
-  useEffect(() => {
-    let listener = (e) => {
-      if (!ref.current.contains(e.target)) {
-        handler();
-      }
-    };
-
-    document.addEventListener('mousedown', listener);
-    return () => {
-      document.removeEventListener('mousedown', listener);
-    };
-  });
-  return ref;
-};
-
 export default function NavMobile() {
-  const [navToggle, setNavToggle] = useState('close');
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
 
-  const ref = useClickOut(() => {
-    setNavToggle('close');
-  });
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
-  const navigate = useNavigate();
+  const handleClick = (e) => {
+    setAnchorEl(e.currentTarget);
+  };
 
   return (
     <nav className="navMobile-container">
-      <div ref={ref}>
-        <div
-          className="nav-mobile"
-          role="button"
-          onClick={() => setNavToggle(navToggle === 'open' ? 'close' : 'open')}
-        >
-          <i className={navToggle}></i>
-          <i className={navToggle}></i>
-          <i className={navToggle}></i>
-        </div>
-        {navToggle === 'open' && (
-          <div className="links-container">
-            <ul className="mobile-links">
-              <li>
-                <button
-                  onClick={() => {
-                    navigate('/');
-                  }}
-                >
-                  Master Tracker
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => {
-                    navigate('/newemployee');
-                  }}
-                >
-                  Add New Employee
-                </button>
-              </li>
-            </ul>
-          </div>
-        )}
-      </div>
+      <IconButton
+        id="fade-button"
+        aria-controls={open ? 'fade-menu' : undefined}
+        aria-haspopup="true"
+        aria-expanded={open ? 'true' : undefined}
+        onClick={handleClick}
+        color="primary"
+        size="300px"
+      >
+        <MenuIcon />
+      </IconButton>
+      <Menu
+        id="fade-menu"
+        MenuListProps={{
+          'aria-labelledby': 'fade-button',
+        }}
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+        TransitionComponent={Fade}
+      >
+        <MenuItem component={Link} href={'/'} onClick={handleClose}>
+          Master Tracker
+        </MenuItem>
+        <MenuItem component={Link} href={'/newemployee'} onClick={handleClose}>
+          Add Employee
+        </MenuItem>
+      </Menu>
     </nav>
   );
 }

@@ -4,6 +4,8 @@
   display: inline-block;
   width: 100%;
   align-content: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
 
   button {
     background-color: $buttoncolor;
@@ -70,8 +72,10 @@
   .functions-category {
     display: block;
     margin: 0;
+    margin-top: 10px;
   }
   .functions-search {
     display: block;
+    margin-bottom: 10px;
   }
 }

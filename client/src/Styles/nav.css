@@ -5,6 +5,7 @@
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  background-color: #c0b9b9;
 }
 
 .nav {
@@ -33,10 +34,9 @@ nav {
   .navMobile-container {
     background-color: #c0b9b9;
     border-radius: 10px;
-    margin-bottom: 10px;
-    padding: 10px;
-    width: -o-calc(100% - 20px);
-    width: calc(100% - 20px);
+    margin: 0;
+    width: -o-calc(100% - 5px);
+    width: calc(100% - 5px);
   }
   nav {
     display: -webkit-box;
