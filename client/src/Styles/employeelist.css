@@ -10,7 +10,9 @@
 
 .employee-container button {
   background-color: #2471a4;
+  border-radius: 10px;
   color: white;
   margin: 2px;
+  cursor: pointer;
 }
 /*# sourceMappingURL=employeelist.css.map */

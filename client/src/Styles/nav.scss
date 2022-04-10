@@ -56,7 +56,7 @@ nav {
       }
 
       .open:nth-child(1) {
-        transform: rotate(45deg) translateY(16px);
+        transform: rotate(58deg) translateY(16px);
       }
 
       .open:nth-child(2) {
@@ -64,7 +64,7 @@ nav {
       }
 
       .open:nth-child(3) {
-        transform: rotate(-45deg) translateY(-16px);
+        transform: rotate(-58deg) translateY(-16px);
       }
 
       .close:nth-child(1) {
@@ -87,6 +87,7 @@ nav {
 
     button {
       background-color: $buttoncolor;
+      border-radius: 10px;
       color: white;
     }
 

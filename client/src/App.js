@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Nav from './components/nav';
 import NavMobile from './components/navmobile';
-import Functions from './components/functionsBar';
 import Main from './pages/main';
 import NewEmployeePage from './pages/addEmployeePage';
 import TargetEmployee from './pages/employeePage';
@@ -28,7 +27,6 @@ export default function App() {
     <BrowserRouter>
       <Nav />
       <NavMobile />
-      <Functions />
       <Routes>
         <Route path="/" element={<Main employees={employees} />} />
         <Route

@@ -66,15 +66,15 @@ nav {
     transition: all ease 0.3s;
   }
   nav .nav-mobile .open:nth-child(1) {
-    -webkit-transform: rotate(45deg) translateY(16px);
-            transform: rotate(45deg) translateY(16px);
+    -webkit-transform: rotate(58deg) translateY(16px);
+            transform: rotate(58deg) translateY(16px);
   }
   nav .nav-mobile .open:nth-child(2) {
     opacity: 0;
   }
   nav .nav-mobile .open:nth-child(3) {
-    -webkit-transform: rotate(-45deg) translateY(-16px);
-            transform: rotate(-45deg) translateY(-16px);
+    -webkit-transform: rotate(-58deg) translateY(-16px);
+            transform: rotate(-58deg) translateY(-16px);
   }
   nav .nav-mobile .close:nth-child(1) {
     -webkit-transform: rotate(0) translateY(0);
@@ -93,6 +93,7 @@ nav {
   }
   .links-container button {
     background-color: #2471a4;
+    border-radius: 10px;
     color: white;
   }
   .links-container ul {

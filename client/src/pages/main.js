@@ -1,10 +1,11 @@
 import React from 'react';
+import Functions from '../components/functionsBar';
 import { useNavigate } from 'react-router-dom';
 
 export default function Main(props) {
-    const { employees } = props;
-    
-    const navigate = useNavigate();
+  const { employees } = props;
+
+  const navigate = useNavigate();
 
   const employeeList = employees.map((employee) => (
     <div key={employee._id}>
@@ -27,7 +28,6 @@ export default function Main(props) {
         <button
           onClick={() => {
             navigate(`/targetemployee/${employee._id}`);
-            ;
           }}
         >
           Employee Page
@@ -43,5 +43,10 @@ export default function Main(props) {
     </div>
   ));
 
-  return <div>{employeeList}</div>;
+  return (
+    <div>
+      <Functions />
+      {employeeList}
+    </div>
+  );
 }

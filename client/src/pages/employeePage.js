@@ -56,8 +56,8 @@ export default function TargetEmployee(props) {
   };
 
   return (
-    <div>
-      <div>
+    <div className="employee-container">
+      <div className="employee-snapshot">
         <p>
           <strong>First Name:</strong> {prevInfo.firstName}
         </p>
@@ -85,7 +85,7 @@ export default function TargetEmployee(props) {
         </button>
       </div>
       {editToggle && (
-        <div>
+        <div className="edit-form">
           <Edit
             firstName={newInfo.firstName}
             lastName={newInfo.lastName}

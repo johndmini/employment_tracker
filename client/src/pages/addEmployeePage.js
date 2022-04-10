@@ -13,7 +13,7 @@ export default function NewEmployeePage(props) {
   };
 
   const [newEmployee, setNewEmployee] = useState(initialInput);
-  console.log(newEmployee);
+  
   const handleChange = (e) => {
     const { name, value } = e.target;
     setNewEmployee((prevState) => ({ ...prevState, [name]: value }));
@@ -69,7 +69,7 @@ export default function NewEmployeePage(props) {
             />
           </label>
           <br />
-          <button>Submit</button>
+          <button>Initial Submit</button>
         </form>
       </div>
       <button
