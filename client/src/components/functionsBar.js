@@ -11,6 +11,10 @@ export default function Functions() {
           <option>Phone Number</option>
         </select>
       </div>
+      <div>
+        <input />
+        <button>Search</button>
+      </div>
     </div>
   );
 }

@@ -7,16 +7,16 @@ export default function TargetEmployee(props) {
   const { employeeId } = useParams();
   const { employees, setEmployees } = props;
   const [editToggle, setEditToggle] = useState(false);
-  const target = employees.find(employee => employee._id === employeeId);
+  const target = employees.find((employee) => employee._id === employeeId);
 
   const prevInfo = {
     firstName: target.firstName,
     lastName: target.lastName,
     email: target.email,
-    phone: target.phone
-  }
+    phone: target.phone,
+  };
   const [newInfo, setNewInfo] = useState(prevInfo);
-  
+
   const navigate = useNavigate();
 
   const handleEdit = () => {
@@ -29,11 +29,16 @@ export default function TargetEmployee(props) {
   };
 
   const updateEmployee = (id, newUpdates) => {
-    axios.put(`/employees/targetemployee/${id}`, newUpdates).then((res) => {
-      setEmployees((prevState) =>
-        prevState.map((employee) => (employee._id !== id ? employee : res.data))
-      ).catch((err) => console.log(err.response));
-    });
+    axios
+      .put(`/employees/targetemployee/${id}`, newUpdates)
+      .then((res) => {
+        setEmployees((prevState) =>
+          prevState.map((employee) =>
+            employee._id !== id ? employee : res.data
+          )
+        );
+      })
+      .catch((err) => console.log(err.response));
   };
 
   const deleteEmployee = (id) => {
@@ -71,7 +76,6 @@ export default function TargetEmployee(props) {
           onClick={() => {
             deleteEmployee(target._id);
             navigate('/');
-            alert('Employee Terminated');
           }}
         >
           Terminate Employee
