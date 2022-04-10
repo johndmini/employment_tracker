@@ -1,21 +1,22 @@
 import React, { useState } from 'react';
 import Edit from '../components/editForm';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 
 export default function TargetEmployee(props) {
-  const { setEmployees } = props;
-  const { state } = useLocation();
+  const { employeeId } = useParams();
+  const { employees, setEmployees } = props;
   const [editToggle, setEditToggle] = useState(false);
-  const prevInfo = {
-    firstName: state.firstName,
-    lastName: state.lastName,
-    email: state.email,
-    phone: state.phone,
-  };
+  const target = employees.find(employee => employee._id === employeeId);
 
+  const prevInfo = {
+    firstName: target.firstName,
+    lastName: target.lastName,
+    email: target.email,
+    phone: target.phone
+  }
   const [newInfo, setNewInfo] = useState(prevInfo);
-  console.log(state);
+  
   const navigate = useNavigate();
 
   const handleEdit = () => {
@@ -28,7 +29,7 @@ export default function TargetEmployee(props) {
   };
 
   const updateEmployee = (id, newUpdates) => {
-    axios.put(`/employees/${id}`, newUpdates).then((res) => {
+    axios.put(`/employees/targetemployee/${id}`, newUpdates).then((res) => {
       setEmployees((prevState) =>
         prevState.map((employee) => (employee._id !== id ? employee : res.data))
       ).catch((err) => console.log(err.response));
@@ -37,7 +38,7 @@ export default function TargetEmployee(props) {
 
   const deleteEmployee = (id) => {
     axios
-      .delete(`/employees/${id}`)
+      .delete(`/employees/targetemployee/${id}`)
       .then((res) =>
         setEmployees((prevState) =>
           prevState.filter((employee) => employee._id !== id)
@@ -50,16 +51,16 @@ export default function TargetEmployee(props) {
     <div>
       <div>
         <p>
-          <strong>First Name:</strong> {newInfo.firstName}
+          <strong>First Name:</strong> {prevInfo.firstName}
         </p>
         <p>
-          <strong>Last Name:</strong> {newInfo.lastName}
+          <strong>Last Name:</strong> {prevInfo.lastName}
         </p>
         <p>
-          <strong>Email:</strong> {newInfo.email}
+          <strong>Email:</strong> {prevInfo.email}
         </p>
         <p>
-          <strong>Phone Number:</strong> {newInfo.phone}
+          <strong>Phone Number:</strong> {prevInfo.phone}
         </p>
         <button onClick={handleEdit}>
           {!editToggle ? 'Edit Info' : 'Close'}
@@ -68,7 +69,7 @@ export default function TargetEmployee(props) {
         <button
           disabled={editToggle === true}
           onClick={() => {
-            deleteEmployee(state._id);
+            deleteEmployee(target._id);
             navigate('/');
             alert('Employee Terminated');
           }}
@@ -85,7 +86,7 @@ export default function TargetEmployee(props) {
             phone={newInfo.phone}
             handleChange={handleChange}
             onSubmit={() => {
-              updateEmployee(state._id, newInfo);
+              updateEmployee(target._id, newInfo);
               handleEdit();
             }}
           />

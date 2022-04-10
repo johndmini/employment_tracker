@@ -42,7 +42,7 @@ employeeRouter.get('/search', (req, res) => {
 });
 
 // Find Employee by id
-employeeRouter.get('/:employeeId', (req, res, next) => {
+employeeRouter.get('/targetemployee/:employeeId', (req, res, next) => {
   Employee.find({ _id: req.params.employeeId }, (err, employee) => {
     if (err) {
       res.status(500);
@@ -53,7 +53,7 @@ employeeRouter.get('/:employeeId', (req, res, next) => {
 });
 
 // Update one employee by id
-employeeRouter.put('/:employeeId', (req, res, next) => {
+employeeRouter.put('/targetemployee/:employeeId', (req, res, next) => {
   Employee.findOneAndUpdate(
     { _id: req.params.employeeId },
     req.body,
@@ -69,7 +69,7 @@ employeeRouter.put('/:employeeId', (req, res, next) => {
 });
 
 // Delete One Employee
-employeeRouter.delete('/:employeeId', (req, res) => {
+employeeRouter.delete('/targetemployee/:employeeId', (req, res) => {
   Employee.findOneAndDelete(
     { _id: req.params.employeeId },
     (err, deletedEmployee) => {

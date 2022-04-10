@@ -36,8 +36,10 @@ export default function App() {
           element={<NewEmployeePage setEmployees={setEmployees} />}
         />
         <Route
-          path="/targetemployee"
-          element={<TargetEmployee employees={employees} setEmployees={setEmployees} />}
+          path="/targetemployee/:employeeId"
+          element={
+            <TargetEmployee employees={employees} setEmployees={setEmployees} />
+          }
         />
         <Route path="/printbadge" element={<Badge />} />
       </Routes>

@@ -5,11 +5,6 @@ export default function Main(props) {
     const { employees } = props;
     
     const navigate = useNavigate();
-    
-    const targetEmployee = (employee) => {
-        const targetEmployee = employee
-        navigate('/targetemployee', { state : targetEmployee });
-    }
 
   const employeeList = employees.map((employee) => (
     <div key={employee._id}>
@@ -31,7 +26,7 @@ export default function Main(props) {
         </p>
         <button
           onClick={() => {
-            targetEmployee(employee);
+            navigate(`/targetemployee/${employee._id}`);
             ;
           }}
         >
