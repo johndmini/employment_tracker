@@ -77,11 +77,7 @@ employeeRouter.delete('/targetemployee/:employeeId', (req, res) => {
         res.status(500);
         return next(err);
       }
-      return res
-        .status(200)
-        .send(
-          `Successfully deleted ${deletedEmployee.firstName} ${deletedEmployee.lastName} from employee tracker`
-        );
+      return res.status(200).send(deletedEmployee);
     }
   );
 });

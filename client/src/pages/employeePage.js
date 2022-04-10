@@ -28,28 +28,31 @@ export default function TargetEmployee(props) {
     setNewInfo((prevState) => ({ ...prevState, [name]: value }));
   };
 
-  const updateEmployee = (id, newUpdates) => {
-    axios
-      .put(`/employees/targetemployee/${id}`, newUpdates)
-      .then((res) => {
-        setEmployees((prevState) =>
-          prevState.map((employee) =>
-            employee._id !== id ? employee : res.data
-          )
-        );
-      })
-      .catch((err) => console.log(err.response));
+  const updateEmployee = async (id, newUpdates) => {
+    try {
+      const response = await axios.put(
+        `/employees/targetemployee/${id}`,
+        newUpdates
+      );
+      setEmployees((prevState) =>
+        prevState.map((employee) =>
+          employee._id !== response.data._id ? employee : response.data
+        )
+      );
+    } catch (error) {
+      console.log(error.response);
+    }
   };
 
-  const deleteEmployee = (id) => {
-    axios
-      .delete(`/employees/targetemployee/${id}`)
-      .then((res) =>
-        setEmployees((prevState) =>
-          prevState.filter((employee) => employee._id !== id)
-        )
-      )
-      .catch((err) => console.log(err));
+  const deleteEmployee = async (id) => {
+    try {
+      const response = await axios.delete(`/employees/targetemployee/${id}`);
+      setEmployees((prevState) =>
+        prevState.filter((employee) => employee._id !== response.data._id)
+      );
+    } catch (error) {
+      console.error(error.response);
+    }
   };
 
   return (
