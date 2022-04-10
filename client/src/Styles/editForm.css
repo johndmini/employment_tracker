@@ -1,14 +1,14 @@
-.employee-container {
+.targetemployee-container {
   font-family: Trebuchet MS, Tahoma, Verdana, Arial, sans-serif;
   border: 1px solid grey;
-  display: inline-block;
+  width: -o-calc(100% - 20px);
+  width: calc(100% - 20px);
   border-radius: 10px;
-  width: 330px;
   padding: 5px;
   margin: 5px;
 }
 
-.employee-container button {
+.targetemployee-container button {
   background-color: #2471a4;
   border-radius: 10px;
   color: white;
@@ -16,15 +16,27 @@
   cursor: pointer;
 }
 
+.edit-form div {
+  display: inline-block;
+  margin: 5px;
+}
+
+.edit-form button {
+  display: block;
+}
+
 @media screen and (max-width: 600px) {
+  .targetemployee-container {
+    width: 330px;
+  }
   .edit-form {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
   }
   .edit-form label {
     width: 150px;
@@ -36,4 +48,4 @@
     width: 150px;
   }
 }
-/*# sourceMappingURL=employeelist.css.map */
+/*# sourceMappingURL=editForm.css.map */

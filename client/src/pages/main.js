@@ -8,45 +8,47 @@ export default function Main(props) {
   const navigate = useNavigate();
 
   const employeeList = employees.map((employee) => (
-    <div key={employee._id}>
-      <div className="employee-container">
-        <p>
-          <strong>Full Name: </strong>
-          {employee.firstName} {employee.lastName}
-        </p>
-        <p>
-          <strong>ID:</strong> {employee._id}
-        </p>
-        <p>
-          <strong>Email: </strong>
-          {employee.email}
-        </p>
-        <p>
-          <strong>Phone: </strong>
-          {employee.phone}
-        </p>
-        <button
-          onClick={() => {
-            navigate(`/targetemployee/${employee._id}`);
-          }}
-        >
-          Employee Page
-        </button>
-        <button
-          onClick={() => {
-            navigate('/printbadge');
-          }}
-        >
-          Print ID Badge
-        </button>
-      </div>
+    <div className="employee-container" key={employee._id}>
+      <p>
+        <strong>Full Name: </strong>
+        {employee.firstName} {employee.lastName}
+      </p>
+      <p>
+        <strong>ID:</strong> {employee._id}
+      </p>
+      <p>
+        <strong>Email: </strong>
+        {employee.email}
+      </p>
+      <p>
+        <strong>Phone: </strong>
+        {employee.phone}
+      </p>
+      <p>
+        <strong>Department: </strong>
+        {employee.department}
+      </p>
+      <button
+        onClick={() => {
+          navigate(`/targetemployee/${employee._id}`);
+        }}
+      >
+        Employee Page
+      </button>
+      <button
+        onClick={() => {
+          navigate('/printbadge');
+        }}
+      >
+        Print ID Badge
+      </button>
     </div>
   ));
 
   return (
-    <div>
+    <>
       <Functions />
-      {employeeList}
-    </div>
+      <div className="employeelist">{employeeList}</div>
+    </>
   );
 }

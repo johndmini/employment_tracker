@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Edit from '../components/editForm';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
+import '../Styles/editForm.css';
 
 export default function TargetEmployee(props) {
   const { employeeId } = useParams();
@@ -14,6 +15,7 @@ export default function TargetEmployee(props) {
     lastName: target.lastName,
     email: target.email,
     phone: target.phone,
+    department: target.department,
   };
   const [newInfo, setNewInfo] = useState(prevInfo);
 
@@ -56,7 +58,7 @@ export default function TargetEmployee(props) {
   };
 
   return (
-    <div className="employee-container">
+    <div className="targetemployee-container">
       <div className="employee-snapshot">
         <p>
           <strong>First Name:</strong> {prevInfo.firstName}
@@ -70,19 +72,23 @@ export default function TargetEmployee(props) {
         <p>
           <strong>Phone Number:</strong> {prevInfo.phone}
         </p>
+        <p>
+          <strong>Department:</strong> {prevInfo.department}
+        </p>
         <button onClick={handleEdit}>
           {!editToggle ? 'Edit Info' : 'Close'}
         </button>
-        <button disabled={editToggle === true}>Print Badge</button>
-        <button
-          disabled={editToggle === true}
-          onClick={() => {
-            deleteEmployee(target._id);
-            navigate('/');
-          }}
-        >
-          Terminate Employee
-        </button>
+        {!editToggle && <button>Print Badge</button>}
+        {!editToggle && (
+          <button
+            onClick={() => {
+              deleteEmployee(target._id);
+              navigate('/');
+            }}
+          >
+            Terminate Employee
+          </button>
+        )}
       </div>
       {editToggle && (
         <div className="edit-form">

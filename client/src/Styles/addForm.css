@@ -1,3 +1,36 @@
+.addForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 10px;
+}
+
+.addForm .input-label {
+  width: 150px;
+  font-family: Trebuchet MS, Tahoma, Verdana, Arial, sans-serif;
+}
+
+.addForm input {
+  width: 200px;
+}
+
+.addForm button {
+  width: 200px;
+  background-color: #2471a4;
+  color: white;
+}
+
+.addForm-container button {
+  margin: 10px;
+  background-color: #2471a4;
+  border-radius: 10px;
+  color: white;
+}
+
 @media screen and (max-width: 600px) {
   .addForm {
     display: -webkit-box;

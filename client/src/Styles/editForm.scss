@@ -1,0 +1,58 @@
+.targetemployee-container {
+  font-family: Trebuchet MS, Tahoma, Verdana, Arial, sans-serif;
+  border: 1px solid grey;
+  width: -moz-calc(100% - 20px);
+  width: -webkit-calc(100% - 20px);
+  width: -o-calc(100% - 20px);
+  width: calc(100% - 20px);
+  border-radius: 10px;
+  padding: 5px;
+  margin: 5px;
+
+  button {
+    background-color: #2471a4;
+    border-radius: 10px;
+    color: white;
+    margin: 2px;
+    cursor: pointer;
+  }
+}
+
+.edit-form {
+    div {
+        display: inline-block;
+        margin: 5px;
+    }
+
+    button {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .targetemployee-container {
+        width: 330px;
+    }
+
+    
+  .edit-form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+
+    
+    label {
+      width: 150px;
+    }
+    input {
+      width: 300px;
+    }
+    button {
+      width: 150px;
+    }
+  }
+}

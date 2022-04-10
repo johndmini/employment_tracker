@@ -7,7 +7,7 @@
     border-radius: 10px;
     width: 330px;
     padding: 5px;
-    margin-top: 10px;
+    margin: 5px;
     
 
     button {
@@ -20,5 +20,21 @@
 }
 
 @media screen and (max-width: 600px) {
+    .edit-form {
+        display: flex;
+        flex-direction: column;
+
+        label {
+            width: 150px;
+        }
+
+        input {
+            width: 300px;
+        }
+
+        button {
+            width: 150px;
+        }
+    }
 
 }
