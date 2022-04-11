@@ -1,11 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Functions from '../components/functionsBar';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios'
 
 export default function Main(props) {
-  const { employees } = props;
-
+  const [filtered, setFiltered] = useState('')
+  const { employees, setEmployees } = props;
+  const [searchField, setSearchField] = useState('');
+  
+  const handleChange = (e) => {
+    setSearchField(e.target.value)
+  }
+  
   const navigate = useNavigate();
+
+  const handleFilter = (e) => {
+    setFiltered(e.target.value)
+  }
+
+  const searchFilter = (e) => {
+    e.preventDefault()
+    console.log(searchField)
+    axios.get(`/employees/search/${filtered}?${filtered}=${searchField}`)
+    .then(res => setEmployees(res.data))
+    .catch(err => console.log(err))
+  }
 
   const employeeList = employees.map((employee) => (
     <div className="employee-container" key={employee._id}>
@@ -55,7 +74,12 @@ export default function Main(props) {
 
   return (
     <>
-      <Functions />
+      <Functions 
+      handleFilter={handleFilter}
+      searchFilter={searchFilter}
+      handleChange={handleChange}
+      searchField={searchField}
+      />
       <div className="employeelist">{employeeList}</div>
     </>
   );

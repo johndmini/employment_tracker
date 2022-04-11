@@ -26,7 +26,7 @@ employeeRouter.post('/', (req, res, next) => {
 });
 
 // Search for Employee(s) by lastname
-employeeRouter.get('/search', (req, res) => {
+employeeRouter.get('/search/lastname', (req, res) => {
   const { lastname } = req.query;
   const pattern = new RegExp(lastname);
   Employee.find(

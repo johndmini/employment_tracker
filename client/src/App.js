@@ -28,7 +28,10 @@ export default function App() {
       <Nav />
       <NavMobile />
       <Routes>
-        <Route path="/" element={<Main employees={employees} />} />
+        <Route
+          path="/"
+          element={<Main employees={employees} setEmployees={setEmployees} />}
+        />
         <Route
           path="/newemployee"
           element={<NewEmployeePage setEmployees={setEmployees} />}
@@ -36,11 +39,7 @@ export default function App() {
         <Route
           path="/targetemployee/:employeeId"
           element={
-            <TargetEmployee
-              employees={employees}
-              setEmployees={setEmployees}
-              setData={getAllEmployees}
-            />
+            <TargetEmployee employees={employees} setEmployees={setEmployees} />
           }
         />
         <Route path="/printbadge" element={<Badge />} />

@@ -3,7 +3,7 @@
 .nav-container {
   display: flex;
   justify-content: flex-end;
-  background-color: rgb(192, 185, 185)
+  background-color: rgb(192, 185, 185);
 }
 
 .nav {
@@ -43,67 +43,5 @@ nav {
     display: flex;
     margin-top: 5px;
     align-items: center;
-    height: 4em;
-
-    .nav-mobile {
-      display: flex;
-      flex-direction: column;
-      padding-left: 8px;
-      cursor: pointer;
-
-      i {
-        background-color: rgb(36, 113, 164);
-        width: 30px;
-        height: 4px;
-        margin: 2px;
-        border-radius: 2px;
-        transition: all ease 0.3s;
-      }
-
-      .open:nth-child(1) {
-        transform: rotate(58deg) translateY(16px);
-      }
-
-      .open:nth-child(2) {
-        opacity: 0;
-      }
-
-      .open:nth-child(3) {
-        transform: rotate(-58deg) translateY(-16px);
-      }
-
-      .close:nth-child(1) {
-        transform: rotate(0) translateY(0);
-      }
-
-      .close:nth-child(2) {
-        opacity: 1;
-      }
-
-      .close:nth-child(3) {
-        transform: rotate(0) translateY(0);
-      }
-    }
-  }
-
-  .links-container {
-    padding: 10px;
-    cursor: pointer;
-
-    button {
-      background-color: $buttoncolor;
-      border-radius: 10px;
-      color: white;
-    }
-
-    ul {
-      padding: 0;
-      margin: 2px;
-      list-style-type: none;
-      li {
-        margin: 2px;
-        display: inline-block;
-      }
-    }
   }
 }
