@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
 });
 
 mongoose.connect(
-  process.env.mongodb_uri || 'mongodb://localhost:27017/employeetracker',
+  'mongodb+srv://johndmini:1Timothy1_12@employment-tracker.amw5x.mongodb.net/myFirstDatabase?retryWrites=true&w=majority' || 'mongodb://localhost:27017/employeetracker',
   console.log('Connected to employee tracker database')
 );
 

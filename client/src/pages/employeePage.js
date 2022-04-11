@@ -44,7 +44,7 @@ export default function TargetEmployee(props) {
   const updateEmployee = async (id, newUpdates) => {
     try {
       const response = await axios.put(
-        `/employees/targetemployee/${id}`,
+        `https://employment-tracker.herokuapp.com/employees/targetemployee/${id}`,
         newUpdates
       );
       setEmployees((prevState) =>
@@ -59,7 +59,7 @@ export default function TargetEmployee(props) {
 
   const deleteEmployee = async (id) => {
     try {
-      const response = await axios.delete(`/employees/targetemployee/${id}`);
+      const response = await axios.delete(`https://employment-tracker.herokuapp.com/employees/targetemployee/${id}`);
       setEmployees((prevState) =>
         prevState.filter((employee) => employee._id !== response.data._id)
       );

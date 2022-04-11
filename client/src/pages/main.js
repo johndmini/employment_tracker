@@ -30,7 +30,7 @@ export default function Main(props) {
   const searchFilter = (e) => {
     e.preventDefault();
     axios
-      .get(`/employees/search/${filtered}?${filtered}=${searchField}`)
+      .get(`https://employment-tracker.herokuapp.com/employees/search/${filtered}?${filtered}=${searchField}`)
       .then((res) => setEmployees(res.data))
       .catch((err) => console.log(err));
     setSearchField('');
