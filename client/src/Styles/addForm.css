@@ -22,6 +22,7 @@
   width: 200px;
   background-color: #2471a4;
   color: white;
+  cursor: pointer;
 }
 
 .addForm-container button {
@@ -29,6 +30,7 @@
   background-color: #2471a4;
   border-radius: 10px;
   color: white;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 600px) {
@@ -53,12 +55,14 @@
     width: 200px;
     background-color: #2471a4;
     color: white;
+    cursor: pointer;
   }
   .addForm-container button {
     margin: 10px;
     background-color: #2471a4;
     border-radius: 10px;
     color: white;
+    cursor: pointer;
   }
 }
 /*# sourceMappingURL=addForm.css.map */

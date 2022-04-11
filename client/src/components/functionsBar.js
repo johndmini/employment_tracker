@@ -2,7 +2,6 @@ import React from 'react';
 import '../Styles/functionsBar.css';
 
 export default function Functions(props) {
-  
   return (
     <div className="functionsBar-container">
       <div className="functions-category">
@@ -10,16 +9,14 @@ export default function Functions(props) {
       </div>
       <div className="functions-select" onChange={props.handleFilter}>
         <select>
+          <option value="all">--Select--</option>
           <option value="lastname">Last Name</option>
           <option value="department">Department</option>
           <option value="phone">Phone Number</option>
         </select>
       </div>
       <form className="functions-search">
-        <input
-        value={props.searchField}
-        onChange={props.handleChange}
-        />
+        <input value={props.searchField} onChange={props.handleChange} />
         <button onClick={props.searchFilter}>Search</button>
       </form>
     </div>

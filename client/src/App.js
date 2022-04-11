@@ -30,7 +30,13 @@ export default function App() {
       <Routes>
         <Route
           path="/"
-          element={<Main employees={employees} setEmployees={setEmployees} />}
+          element={
+            <Main
+              employees={employees}
+              setEmployees={setEmployees}
+              getAllEmployees={getAllEmployees}
+            />
+          }
         />
         <Route
           path="/newemployee"

@@ -1,30 +1,39 @@
 import React, { useState } from 'react';
 import Functions from '../components/functionsBar';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios'
+import axios from 'axios';
 
 export default function Main(props) {
-  const [filtered, setFiltered] = useState('')
-  const { employees, setEmployees } = props;
+  const [filtered, setFiltered] = useState('all');
+  const { employees, setEmployees, getAllEmployees } = props;
   const [searchField, setSearchField] = useState('');
-  
+
   const handleChange = (e) => {
-    setSearchField(e.target.value)
-  }
-  
+    setSearchField(e.target.value);
+  };
+
   const navigate = useNavigate();
 
-  const handleFilter = (e) => {
-    setFiltered(e.target.value)
+  const reset = () => {
+    if(filtered === 'all'){
+      getAllEmployees();
+    }
   }
+  
+  reset();
+
+  const handleFilter = (e) => {
+    setFiltered(e.target.value);
+  };
 
   const searchFilter = (e) => {
-    e.preventDefault()
-    console.log(searchField)
-    axios.get(`/employees/search/${filtered}?${filtered}=${searchField}`)
-    .then(res => setEmployees(res.data))
-    .catch(err => console.log(err))
-  }
+    e.preventDefault();
+    axios
+      .get(`/employees/search/${filtered}?${filtered}=${searchField}`)
+      .then((res) => setEmployees(res.data))
+      .catch((err) => console.log(err));
+    setSearchField('');
+  };
 
   const employeeList = employees.map((employee) => (
     <div className="employee-container" key={employee._id}>
@@ -74,11 +83,12 @@ export default function Main(props) {
 
   return (
     <>
-      <Functions 
-      handleFilter={handleFilter}
-      searchFilter={searchFilter}
-      handleChange={handleChange}
-      searchField={searchField}
+      <Functions
+        handleFilter={handleFilter}
+        searchFilter={searchFilter}
+        handleChange={handleChange}
+        filtered={filtered}
+        searchField={searchField}
       />
       <div className="employeelist">{employeeList}</div>
     </>
