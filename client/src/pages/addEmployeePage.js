@@ -32,7 +32,13 @@ export default function NewEmployeePage(props) {
   return (
     <div className="addForm-container">
       <div>
-        <form onSubmit={() => addEmployee()} className="addForm">
+        <form
+          onSubmit={() => {
+            addEmployee();
+            navigate('/');
+          }}
+          className="addForm"
+        >
           <label className="input-label">
             First Name:
             <input
