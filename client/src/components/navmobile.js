@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Menu, MenuItem, Fade, IconButton, Link } from '@mui/material';
+import { Menu, MenuItem, Fade, IconButton } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 import { Menu as MenuIcon } from '@mui/icons-material';
 import '../Styles/nav.css';
 
@@ -7,9 +8,21 @@ export default function NavMobile() {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
 
+  const navigate = useNavigate();
+
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+  const handleMasterTracker = () => {
+    setAnchorEl(null);
+    navigate('/');
+  }
+
+  const handleNewEmployee = () => {
+    setAnchorEl(null);
+    navigate('/newemployee')
+  }
 
   const handleClick = (e) => {
     setAnchorEl(e.currentTarget);
@@ -38,10 +51,10 @@ export default function NavMobile() {
         onClose={handleClose}
         TransitionComponent={Fade}
       >
-        <MenuItem component={Link} href={'/'} onClick={handleClose}>
+        <MenuItem onClick={handleMasterTracker}>
           Master Tracker
         </MenuItem>
-        <MenuItem component={Link} href={'/newemployee'} onClick={handleClose}>
+        <MenuItem onClick={handleNewEmployee}>
           Add Employee
         </MenuItem>
       </Menu>
