@@ -14,7 +14,7 @@ employeeRouter.get('/', (req, res, next) => {
 });
 
 // Post One Employee
-employeeRouter.post('/new', (req, res, next) => {
+employeeRouter.post('/', (req, res, next) => {
   const newEmployee = new Employee(req.body);
   newEmployee.save((err, employee) => {
     if (err) {
