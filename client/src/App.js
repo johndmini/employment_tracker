@@ -14,7 +14,7 @@ export default function App() {
 
   const getAllEmployees = () => {
     axios
-      .get('/employees')
+      .get(`${process.env.mongodb_uri}/employees`)
       .then((res) => setEmployees(res.data))
       .catch((err) => console.log(err));
   };

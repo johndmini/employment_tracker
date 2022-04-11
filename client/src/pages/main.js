@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Functions from '../components/functionsBar';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import '../Styles/employeelist.css';
 
 export default function Main(props) {
   const [filtered, setFiltered] = useState('all');
