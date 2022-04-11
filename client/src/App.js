@@ -14,7 +14,7 @@ export default function App() {
 
   const getAllEmployees = () => {
     axios
-      .get('https://johnd-employment-tracker.herokuapp.com/employees')
+      .get('/employees')
       .then((res) => setEmployees(res.data))
       .catch((err) => console.log(err));
   };

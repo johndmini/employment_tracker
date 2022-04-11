@@ -21,7 +21,7 @@ export default function NewEmployeePage(props) {
 
   const addEmployee = () => {
     axios
-      .post('https://johnd-employment-tracker.herokuapp.com/employees', newEmployee)
+      .post('/employees', newEmployee)
       .then((res) => setEmployees((prevState) => [...prevState, res.data]))
       .catch((err) => console.log(err));
     setNewEmployee(initialInput);

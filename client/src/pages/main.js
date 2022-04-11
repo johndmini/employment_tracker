@@ -29,7 +29,7 @@ export default function Main(props) {
   const searchFilter = (e) => {
     e.preventDefault();
     axios
-      .get(`https://johnd-employment-tracker.herokuapp.com/employees/search/${filtered}?${filtered}=${searchField}`)
+      .get(`/employees/search/${filtered}?${filtered}=${searchField}`)
       .then((res) => setEmployees(res.data))
       .catch((err) => console.log(err));
     setSearchField('');
@@ -66,14 +66,14 @@ export default function Main(props) {
       </p>
       <button
         onClick={() => {
-          navigate(`https://johnd-employment-tracker.herokuapp.com/targetemployee/${employee._id}`);
+          navigate(`/targetemployee/${employee._id}`);
         }}
       >
         Employee Page
       </button>
       <button
         onClick={() => {
-          navigate('https://johnd-employment-tracker.herokuapp.com/printbadge');
+          navigate('/printbadge');
         }}
       >
         Print ID Badge
