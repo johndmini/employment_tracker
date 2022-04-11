@@ -2,6 +2,7 @@ const express = require('express');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
 const app = express();
+require('dotenv').config();
 
 app.use(express.json());
 app.use(morgan('dev'));
@@ -18,6 +19,6 @@ app.use((err, req, res, next) => {
   return res.send({ error: err.message });
 });
 
-app.listen(9000, () => {
+app.listen(process.env.PORT || 9000, () => {
   console.log('Express server listening on port 9000');
 });
