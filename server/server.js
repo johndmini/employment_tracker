@@ -7,6 +7,10 @@ require('dotenv').config();
 app.use(express.json());
 app.use(morgan('dev'));
 
+app.get('/', (req, res) => {
+  res.send('Test Deployment Successful');
+})
+
 mongoose.connect(
   'mongodb://localhost:27017/employeetracker',
   console.log('Connected to employee tracker database')
