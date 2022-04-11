@@ -38,10 +38,10 @@ export default function NavMobile() {
         onClose={handleClose}
         TransitionComponent={Fade}
       >
-        <MenuItem component={Link} href={'/'} onClick={handleClose}>
+        <MenuItem component={Link} href={'https://johnd-employment-tracker.herokuapp.com/'} onClick={handleClose}>
           Master Tracker
         </MenuItem>
-        <MenuItem component={Link} href={'/newemployee'} onClick={handleClose}>
+        <MenuItem component={Link} href={'https://johnd-employment-tracker.herokuapp.com/newemployee'} onClick={handleClose}>
           Add Employee
         </MenuItem>
       </Menu>

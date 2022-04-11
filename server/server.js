@@ -7,7 +7,7 @@ require('dotenv').config();
 app.use(express.json());
 app.use(morgan('dev'));
 
-app.get('/', (req, res) => {
+app.get('https://johnd-employment-tracker.herokuapp.com/', (req, res) => {
   res.send('Test Deployment Successful');
 })
 
@@ -16,7 +16,7 @@ mongoose.connect(
   console.log('Connected to employee tracker database')
 );
 
-app.use('/employees', require('./routes/employeeRoutes'));
+app.use('https://johnd-employment-tracker.herokuapp.com/employees', require('./routes/employeeRoutes'));
 
 app.use((err, req, res, next) => {
   console.log(err);

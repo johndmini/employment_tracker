@@ -7,8 +7,8 @@ export default function Nav() {
   return (
     <div className="nav-container">
       <div className="nav">
-        <button onClick={() => navigate('/')}>Master Tracker</button>
-        <button onClick={() => navigate('/newemployee')}>Add New Employee</button>
+        <button onClick={() => navigate('https://johnd-employment-tracker.herokuapp.com/')}>Master Tracker</button>
+        <button onClick={() => navigate('https://johnd-employment-tracker.herokuapp.com/newemployee')}>Add New Employee</button>
       </div>
     </div>
   );
