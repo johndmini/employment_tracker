@@ -59,7 +59,9 @@ export default function TargetEmployee(props) {
 
   const deleteEmployee = async (id) => {
     try {
-      const response = await axios.delete(`https://employment-tracker.herokuapp.com/employees/targetemployee/${id}`);
+      const response = await axios.delete(
+        `https://employment-tracker.herokuapp.com/employees/targetemployee/${id}`
+      );
       setEmployees((prevState) =>
         prevState.filter((employee) => employee._id !== response.data._id)
       );
@@ -70,7 +72,7 @@ export default function TargetEmployee(props) {
 
   const styles = {
     backgroundColor: 'red',
-  }
+  };
 
   return (
     <div className="targetemployee-container">
@@ -93,10 +95,21 @@ export default function TargetEmployee(props) {
         <p>
           <strong>Department:</strong> {prevInfo.department}
         </p>
-        <button style={(!prevInfo.address || !prevInfo.emergencyContactPhone) ? styles : null} onClick={handleEdit}>
+        <button
+          style={
+            !prevInfo.address || !prevInfo.emergencyContactPhone ? styles : null
+          }
+          onClick={handleEdit}
+        >
           {!editToggle ? 'Edit Info' : 'Close'}
         </button>
-        {!editToggle && <button>Print Badge</button>}
+        {!editToggle && (
+          <button
+            onClick={() => navigate('/printbadge', { state: { newInfo } })}
+          >
+            Print Badge
+          </button>
+        )}
         {!editToggle && (
           <button
             onClick={() => {

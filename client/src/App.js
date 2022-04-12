@@ -48,7 +48,7 @@ export default function App() {
             <TargetEmployee employees={employees} setEmployees={setEmployees} />
           }
         />
-        <Route path="/printbadge" element={<Badge />} />
+        <Route path="/printbadge" element={<Badge employees={employees} />} />
       </Routes>
     </BrowserRouter>
   );

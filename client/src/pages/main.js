@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Functions from '../components/functionsBar';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -16,12 +16,14 @@ export default function Main(props) {
   const navigate = useNavigate();
 
   const reset = () => {
-    if(filtered === 'all'){
+    if (filtered === 'all') {
       getAllEmployees();
     }
-  }
-  
-  reset();
+  };
+
+  useEffect(() => {
+    reset();
+  },[filtered])
 
   const handleFilter = (e) => {
     setFiltered(e.target.value);
@@ -30,7 +32,9 @@ export default function Main(props) {
   const searchFilter = (e) => {
     e.preventDefault();
     axios
-      .get(`https://employment-tracker.herokuapp.com/employees/search/${filtered}?${filtered}=${searchField}`)
+      .get(
+        `https://employment-tracker.herokuapp.com/employees/search/${filtered}?${filtered}=${searchField}`
+      )
       .then((res) => setEmployees(res.data))
       .catch((err) => console.log(err));
     setSearchField('');
@@ -74,7 +78,7 @@ export default function Main(props) {
       </button>
       <button
         onClick={() => {
-          navigate('/printbadge');
+          navigate('/printbadge', { state: { employee } });
         }}
       >
         Print ID Badge

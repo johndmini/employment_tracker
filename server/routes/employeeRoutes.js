@@ -43,19 +43,34 @@ employeeRouter.get('/search/lastname', (req, res) => {
 
 // Search for Employee(s) by Department
 employeeRouter.get('/search/department', (req, res) => {
-    const { department } = req.query;
-    const pattern = new RegExp(department);
-    Employee.find(
-      { department: { $regex: pattern, $options: 'i' } },
-      (err, employees) => {
-        if (err) {
-          res.status(500);
-          return next(err);
-        }
-        return res.status(200).send(employees);
+  const { department } = req.query;
+  const pattern = new RegExp(department);
+  Employee.find(
+    { department: { $regex: pattern, $options: 'i' } },
+    (err, employees) => {
+      if (err) {
+        res.status(500);
+        return next(err);
       }
-    );
-  });
+      return res.status(200).send(employees);
+    }
+  );
+});
+
+// employeeRouter.get('/search/:filter', (req, res, next) => {
+//   const { lastname, department, phone } = req.query;
+//   const pattern = new RegExp(`${lastname} || ${department} || ${phone}`);
+//   Employee.find(
+//     { [req.params.filter]: { $regex: pattern, $options: 'i' } },
+//     (err, employees) => {
+//       if (err) {
+//         res.status(500);
+//         return next(err);
+//       }
+//       return res.status(200).send(employees);
+//     }
+//   );
+// });
 
 // Find Employee by id
 employeeRouter.get('/targetemployee/:employeeId', (req, res, next) => {
