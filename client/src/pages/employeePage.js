@@ -15,7 +15,7 @@ export default function TargetEmployee(props) {
     lastName: target.lastName,
     email: target.email,
     phone: target.phone,
-    department: target.department,
+    department: target.department || 'IT Development',
     address: target.address,
     emergencyContactFirstName: target.emergencyContactFirstName,
     emergencyContactLastName: target.emergencyContactLastName,
