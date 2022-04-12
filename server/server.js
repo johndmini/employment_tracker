@@ -7,14 +7,28 @@ require('dotenv').config();
 
 app.use(express.json());
 app.use(morgan('dev'));
-app.use(cors({ origin: 'https://johndemployment-tracker.netlify.app' }));
+
+const allowedDomains = ['https://johndemployment-tracker.netlify.app/', 'http://localhost:3000'];
+app.use(cors({
+  origin: function (origin, callback) {
+    // bypass the requests with no origin (like curl requests, mobile apps, etc )
+    if (!origin) return callback(null, true);
+ 
+    if (allowedDomains.indexOf(origin) === -1) {
+      const msg = `This site ${origin} does not have an access. Only specific domains are allowed to access it.`;
+      return callback(new Error(msg), false);
+    }
+    return callback(null, true);
+  }
+}));
 
 app.get('/', (req, res) => {
   res.send('Test Deployment Success');
 });
 
 mongoose.connect(
-  'mongodb+srv://johndmini:1Timothy1_12@employment-tracker.amw5x.mongodb.net/myFirstDatabase?retryWrites=true&w=majority' || 'mongodb://localhost:27017/employeetracker',
+  'mongodb+srv://johndmini:1Timothy1_12@employment-tracker.amw5x.mongodb.net/myFirstDatabase?retryWrites=true&w=majority' ||
+    'mongodb://localhost:27017/employeetracker',
   console.log('Connected to employee tracker database')
 );
 
