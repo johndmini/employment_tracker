@@ -49,6 +49,7 @@ export default function Edit(props) {
           <label>
             Department:
             <select onChange={props.handleSelect}>
+              <option value="none">--Please Select--</option>
               <option value="IT Development">IT Development</option>
               <option value="IT Maintenance">IT Maintenance</option>
               <option value="IT QA/QC">IT QA/QC</option>
