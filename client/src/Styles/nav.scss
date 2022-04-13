@@ -1,7 +1,7 @@
 @import '../Variables/Variables.scss';
 
 .badge-page {
-  padding-bottom: 70px;
+  padding-bottom: 20px;
 }
 
 .nav-container {
@@ -51,8 +51,8 @@
 }
 
 footer {
-  position: fixed;
-  bottom: 0;
+  position: absolute;
+  bottom: -1;
   text-align: center;
   background-color: #344263;
   color: #adb5c7;
@@ -121,7 +121,7 @@ nav {
 
   footer {
     position: relative;
-    flex: 0 0 50px; /*or just height:50px;*/
+    flex: 0 0 50px;
     margin-top: auto;
     width: -moz-calc(100% - 10px);
     width: -webkit-calc(100% - 10px);

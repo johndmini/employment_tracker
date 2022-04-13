@@ -1,9 +1,7 @@
 @import '../Variables/Variables.scss';
 
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+.employeelist {
+  min-height: calc(100vh - 98px);
 }
 
 .employee-container {

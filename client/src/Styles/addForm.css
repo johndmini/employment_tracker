@@ -25,6 +25,10 @@
   cursor: pointer;
 }
 
+.addForm-container {
+  min-height: calc(100vh - 99px);
+}
+
 .addForm-container button {
   margin: 10px;
   background-color: #2471a4;
