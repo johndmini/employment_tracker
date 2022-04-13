@@ -44,31 +44,6 @@
 }
 
 @media screen and (max-width: 600px) {
-  .functionsBar-container {
-    button {
-      background-color: $buttoncolor;
-      font-family: $font-stack;
-      border-radius: 10px;
-      color: white;
-      cursor: pointer;
-      margin: 2px;
-    }
-
-    input {
-      border-radius: 10px;
-      margin: 2px;
-    }
-
-    h5 {
-      font-family: $font-stack;
-      margin: 0;
-    }
-  }
-
-  .functions-select {
-    margin: 2px;
-    border-radius: 10px;
-  }
   .functions-category {
     display: block;
     margin: 0;

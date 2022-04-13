@@ -44,26 +44,6 @@
 }
 
 @media screen and (max-width: 600px) {
-  .functionsBar-container button {
-    background-color: #2471a4;
-    font-family: Trebuchet MS, Tahoma, Verdana, Arial, sans-serif;
-    border-radius: 10px;
-    color: white;
-    cursor: pointer;
-    margin: 2px;
-  }
-  .functionsBar-container input {
-    border-radius: 10px;
-    margin: 2px;
-  }
-  .functionsBar-container h5 {
-    font-family: Trebuchet MS, Tahoma, Verdana, Arial, sans-serif;
-    margin: 0;
-  }
-  .functions-select {
-    margin: 2px;
-    border-radius: 10px;
-  }
   .functions-category {
     display: block;
     margin: 0;

@@ -31,37 +31,3 @@
     cursor: pointer;
   }
 }
-
-@media screen and (max-width: 600px) {
-  .addForm {
-    display: flex;
-    flex-direction: column;
-    margin: 10px;
-
-    .input-label {
-      width: 150px;
-      font-family: $font-stack;
-    }
-
-    input {
-      width: 200px;
-    }
-
-    button {
-      width: 200px;
-      background-color: $buttoncolor;
-      color: white;
-      cursor: pointer;
-    }
-  }
-
-  .addForm-container {
-    button {
-      margin: 10px;
-      background-color: $buttoncolor;
-      border-radius: 10px;
-      color: white;
-      cursor: pointer;
-    }
-  }
-}
