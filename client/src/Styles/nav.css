@@ -5,7 +5,12 @@
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  background-color: #c0b9b9;
+  background-color: #344263;
+  color: #adb5c7;
+  border-radius: 10px;
+  padding: 3px;
+  width: -o-calc(100% - 10px);
+  width: calc(100% - 10px);
 }
 
 .nav-container .nav-title {
@@ -16,11 +21,18 @@
 }
 
 .nav-container .nav-title img {
-  width: 30px;
+  width: 25px;
   -ms-flex-line-pack: center;
       align-content: center;
-  padding: 2px;
+  padding: 3px;
   margin-right: 5px;
+  overflow: hidden;
+}
+
+.nav-container .nav-title h5 {
+  margin: 0;
+  margin-top: 12px;
+  padding: 0;
 }
 
 .nav {
@@ -59,20 +71,20 @@ nav {
     margin-right: 5px;
   }
   .nav-title img {
-    width: 30px;
-    -ms-flex-line-pack: center;
-        align-content: center;
-    padding: 2px;
+    width: 25px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 3px;
     margin-left: 5px;
+    overflow: hidden;
+  }
+  .nav-title h5 {
+    margin: 0;
+    margin-top: 12px;
+    padding: 0;
   }
   .navMobile-container {
-    background-color: #c0b9b9;
-    border-radius: 10px;
-    margin: 0;
-    width: -o-calc(100% - 5px);
-    width: calc(100% - 5px);
-  }
-  nav {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -80,6 +92,15 @@ nav {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    background-color: #344263;
+    color: #adb5c7;
+    border-radius: 10px;
+    margin: 0;
+    width: -o-calc(100% - 15px);
+    width: calc(100% - 15px);
   }
 }
 /*# sourceMappingURL=nav.css.map */
