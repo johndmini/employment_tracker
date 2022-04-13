@@ -51,7 +51,7 @@
 }
 
 footer {
-  position: relative;
+  position: fixed;
   bottom: 0;
   text-align: center;
   background-color: #344263;
@@ -114,6 +114,14 @@ nav {
     margin: 0;
     width: -o-calc(100% - 15px);
     width: calc(100% - 15px);
+  }
+  footer {
+    position: relative;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 50px;
+            flex: 0 0 50px;
+    /*or just height:50px;*/
+    margin-top: auto;
   }
 }
 /*# sourceMappingURL=nav.css.map */

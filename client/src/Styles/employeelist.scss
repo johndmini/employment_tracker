@@ -1,5 +1,11 @@
 @import '../Variables/Variables.scss';
 
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .employee-container {
   font-family: $font-stack;
   border: 2px solid grey;
