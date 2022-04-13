@@ -50,6 +50,18 @@
   cursor: pointer;
 }
 
+footer {
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  background-color: #344263;
+  color: #adb5c7;
+  border-radius: 10px;
+  padding: 3px;
+  width: -o-calc(100% - 20px);
+  width: calc(100% - 20px);
+}
+
 nav {
   display: none;
 }

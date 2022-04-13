@@ -6,6 +6,7 @@ import Main from './pages/main';
 import NewEmployeePage from './pages/addEmployeePage';
 import TargetEmployee from './pages/employeePage';
 import Badge from './pages/printBadge';
+import Footer from './components/footer';
 import axios from 'axios';
 import './Styles/employeelist.css';
 
@@ -50,6 +51,7 @@ export default function App() {
         />
         <Route path="/printbadge" element={<Badge employees={employees} />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }
