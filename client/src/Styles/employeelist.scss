@@ -2,12 +2,12 @@
 
 .employee-container {
   font-family: $font-stack;
-  border: 1px solid grey;
+  border: 2px solid grey;
   display: inline-block;
   border-radius: 10px;
   width: 330px;
   height: 360px;
-  overflow: scroll;
+  overflow: hidden;
   padding: 5px;
   margin: 5px;
 

@@ -1,11 +1,11 @@
 .employee-container {
   font-family: Trebuchet MS, Tahoma, Verdana, Arial, sans-serif;
-  border: 1px solid grey;
+  border: 2px solid grey;
   display: inline-block;
   border-radius: 10px;
   width: 330px;
   height: 360px;
-  overflow: scroll;
+  overflow: hidden;
   padding: 5px;
   margin: 5px;
 }
