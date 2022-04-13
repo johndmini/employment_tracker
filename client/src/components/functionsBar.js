@@ -12,7 +12,6 @@ export default function Functions(props) {
           <option value="all">--Select--</option>
           <option value="lastname">Last Name</option>
           <option value="department">Department</option>
-          <option value="phone">Phone Number</option>
         </select>
       </div>
       <form className="functions-search">

@@ -104,9 +104,7 @@ export default function TargetEmployee(props) {
           {!editToggle ? 'Edit Info' : 'Close'}
         </button>
         {!editToggle && (
-          <button
-            onClick={() => navigate('/printbadge', { state: { newInfo } })}
-          >
+          <button onClick={() => navigate('/printbadge', { state: newInfo })}>
             Print Badge
           </button>
         )}

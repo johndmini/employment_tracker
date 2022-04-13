@@ -1,0 +1,82 @@
+@media screen and (max-width: 600px) {
+  .badge-front {
+    border: 2px solid cornflowerblue;
+    font-family: Trebuchet MS, Tahoma, Verdana, Arial, sans-serif;
+    background-color: #3a63a6;
+    color: #cfd6e3;
+    padding: 5px;
+    width: 410px;
+  }
+  .badge-front img {
+    width: 200px;
+    display: inline-block;
+  }
+  .badge-front .qr-code {
+    width: 150px;
+    margin-left: 30px;
+    margin-bottom: 30px;
+  }
+  .badge-front .pii {
+    display: inline-block;
+    margin-right: 85px;
+  }
+  .badge-front .sample-company {
+    width: 120px;
+  }
+  .badge-front h5 {
+    padding: 0px;
+    margin: 0px;
+  }
+  .badge-front p {
+    font-size: 13px;
+  }
+  .badge-back {
+    position: relative;
+    border: 2px solid cornflowerblue;
+    text-align: center;
+    font-family: Trebuchet MS, Tahoma, Verdana, Arial, sans-serif;
+    background-color: #3a63a6;
+    color: #cfd6e3;
+    padding: 5px;
+    width: 410px;
+    height: 402px;
+  }
+  .badge-back .barcode {
+    margin-top: 30px;
+    width: 350px;
+  }
+  .badge-back p {
+    margin: 2px;
+    padding: 2px;
+  }
+  .badge-back h5 {
+    margin: 0px;
+    padding: 0px;
+  }
+  .badge-back .avatar {
+    width: 40px;
+  }
+  .badge-back .signature {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 50px;
+  }
+  .badge-back .signature input {
+    width: 250px;
+  }
+  button {
+    margin: 10px;
+    background-color: #2471a4;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+  }
+}
+/*# sourceMappingURL=badge.css.map */

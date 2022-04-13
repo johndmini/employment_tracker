@@ -8,7 +8,7 @@ export default function Main(props) {
   const [filtered, setFiltered] = useState('all');
   const { employees, setEmployees, getAllEmployees } = props;
   const [searchField, setSearchField] = useState('');
-
+  
   const handleChange = (e) => {
     setSearchField(e.target.value);
   };
@@ -78,7 +78,7 @@ export default function Main(props) {
       </button>
       <button
         onClick={() => {
-          navigate('/printbadge', { state: { employee } });
+          navigate('/printbadge', { state:  employee });
         }}
       >
         Print ID Badge
