@@ -1,3 +1,7 @@
+.badge-page {
+  padding-bottom: 70px;
+}
+
 .nav-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -10,7 +14,7 @@
   border-radius: 10px;
   padding: 3px;
   width: -o-calc(100% - 10px);
-  width: calc(100% - 10px);
+  width: calc(100% - 5px);
 }
 
 .nav-container .nav-title {
@@ -58,8 +62,8 @@ footer {
   color: #adb5c7;
   border-radius: 10px;
   padding: 3px;
-  width: -o-calc(100% - 10px);
-  width: calc(100% - 10px);
+  width: -o-calc(100% - 25px);
+  width: calc(100% - 25px);
 }
 
 nav {
@@ -72,6 +76,9 @@ nav {
   }
   .nav-container {
     display: none;
+  }
+  .badge-page {
+    padding: 10px;
   }
   .hamburger {
     margin-right: auto;
@@ -112,8 +119,8 @@ nav {
     color: #adb5c7;
     border-radius: 10px;
     margin: 0;
-    width: -o-calc(100% - 15px);
-    width: calc(100% - 15px);
+    width: -o-calc(100% - 2px);
+    width: calc(100% - 2px);
   }
   footer {
     position: relative;
@@ -122,6 +129,8 @@ nav {
             flex: 0 0 50px;
     /*or just height:50px;*/
     margin-top: auto;
+    width: -o-calc(100% - 10px);
+    width: calc(100% - 10px);
   }
 }
 /*# sourceMappingURL=nav.css.map */
