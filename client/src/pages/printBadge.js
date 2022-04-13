@@ -8,7 +8,7 @@ export default function Badge() {
   console.log(state);
 
   return (
-    <div>
+    <div className="badge-page">
       <div className="front">
         <h4>Front</h4>
         <div className="badge-front">
@@ -45,7 +45,11 @@ export default function Badge() {
           <img src="./images/longbarcode.png" className="barcode" alt="" />
           <p>LOREM-{state._id}-IPSUM</p>
           <div className="signature">
-            <img src="./images/image-placeholder.png" className="avatar" alt="" />
+            <img
+              src="./images/image-placeholder.png"
+              className="avatar"
+              alt=""
+            />
             <input />
             <br />
           </div>
@@ -58,6 +62,13 @@ export default function Badge() {
         }}
       >
         Return to Master Tracker
+      </button>
+      <button
+        onClick={() => {
+          navigate(-1);
+        }}
+      >
+        {'< Back'}
       </button>
     </div>
   );

@@ -1,90 +1,88 @@
 @import '../Variables/Variables.scss';
 
-@media screen and (max-width: 600px) {
-  .badge-front {
-    border: 2px solid cornflowerblue;
-    font-family: $font-stack;
-    background-color: #3a63a6;
-    color: #cfd6e3;
-    padding: 5px;
-    width: 410px;
+.badge-front {
+  border: 2px solid cornflowerblue;
+  font-family: $font-stack;
+  background-color: #3a63a6;
+  color: #cfd6e3;
+  padding: 5px;
+  width: 410px;
 
-    img {
-      width: 200px;
-      display: inline-block;
-    }
-
-    .qr-code {
-      width: 150px;
-      margin-left: 30px;
-      margin-bottom: 30px;
-    }
-    .pii {
-      display: inline-block;
-      margin-right: 85px;
-    }
-
-    .sample-company {
-      width: 120px;
-    }
-
-    h5 {
-      padding: 0px;
-      margin: 0px;
-    }
-
-    p {
-      font-size: 13px;
-    }
+  img {
+    width: 200px;
+    display: inline-block;
   }
 
-  .badge-back {
-    position: relative;
-    border: 2px solid cornflowerblue;
-    text-align: center;
-    font-family: $font-stack;
-    background-color: #3a63a6;
-    color: #cfd6e3;
-    padding: 5px;
-    width: 410px;
-    height: 402px;
-
-    .barcode {
-      margin-top: 30px;
-      width: 350px;
-    }
-
-    p {
-        margin: 2px;
-        padding: 2px;
-    }
-
-    h5 {
-        margin: 0px;
-        padding: 0px;
-    }
-
-    .avatar {
-        width: 40px;
-    }
-
-    .signature {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 50px;
-
-        input {
-            width: 250px;
-        }
-    }
+  .qr-code {
+    width: 150px;
+    margin-left: 30px;
+    margin-bottom: 30px;
+  }
+  .pii {
+    display: inline-block;
+    margin-right: 85px;
   }
 
-  button {
-    margin: 10px;
-    background-color: $buttoncolor;
-    border-radius: 10px;
-    color: white;
-    cursor: pointer;
+  .sample-company {
+    width: 120px;
   }
+
+  h5 {
+    padding: 0px;
+    margin: 0px;
+  }
+
+  p {
+    font-size: 13px;
+  }
+}
+
+.badge-back {
+  position: relative;
+  border: 2px solid cornflowerblue;
+  text-align: center;
+  font-family: $font-stack;
+  background-color: #3a63a6;
+  color: #cfd6e3;
+  padding: 5px;
+  width: 410px;
+  height: 402px;
+
+  .barcode {
+    margin-top: 30px;
+    width: 350px;
+  }
+
+  p {
+    margin: 2px;
+    padding: 2px;
+  }
+
+  h5 {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .avatar {
+    width: 40px;
+  }
+
+  .signature {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+
+    input {
+      width: 250px;
+    }
+  }
+}
+
+button {
+  margin: 10px;
+  background-color: $buttoncolor;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
 }
