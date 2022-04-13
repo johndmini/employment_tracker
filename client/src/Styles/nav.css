@@ -51,15 +51,15 @@
 }
 
 footer {
-  position: fixed;
+  position: relative;
   bottom: 0;
   text-align: center;
   background-color: #344263;
   color: #adb5c7;
   border-radius: 10px;
   padding: 3px;
-  width: -o-calc(100% - 20px);
-  width: calc(100% - 20px);
+  width: -o-calc(100% - 10px);
+  width: calc(100% - 10px);
 }
 
 nav {
@@ -100,6 +100,7 @@ nav {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    position: relative;
     margin-top: 5px;
     -webkit-box-align: center;
         -ms-flex-align: center;
