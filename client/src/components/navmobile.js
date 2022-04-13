@@ -17,12 +17,12 @@ export default function NavMobile() {
   const handleMasterTracker = () => {
     setAnchorEl(null);
     navigate('/');
-  }
+  };
 
   const handleNewEmployee = () => {
     setAnchorEl(null);
-    navigate('/newemployee')
-  }
+    navigate('/newemployee');
+  };
 
   const handleClick = (e) => {
     setAnchorEl(e.currentTarget);
@@ -30,34 +30,36 @@ export default function NavMobile() {
 
   return (
     <nav className="navMobile-container">
-      <IconButton
-        id="fade-button"
-        aria-controls={open ? 'fade-menu' : undefined}
-        aria-haspopup="true"
-        aria-expanded={open ? 'true' : undefined}
-        onClick={handleClick}
-        color="primary"
-        size="300px"
-      >
-        <MenuIcon />
-      </IconButton>
-      <Menu
-        id="fade-menu"
-        MenuListProps={{
-          'aria-labelledby': 'fade-button',
-        }}
-        anchorEl={anchorEl}
-        open={open}
-        onClose={handleClose}
-        TransitionComponent={Fade}
-      >
-        <MenuItem onClick={handleMasterTracker}>
-          Master Tracker
-        </MenuItem>
-        <MenuItem onClick={handleNewEmployee}>
-          Add Employee
-        </MenuItem>
-      </Menu>
+      <div className="hamburger">
+        <IconButton
+          id="fade-button"
+          aria-controls={open ? 'fade-menu' : undefined}
+          aria-haspopup="true"
+          aria-expanded={open ? 'true' : undefined}
+          onClick={handleClick}
+          color="primary"
+          size="300px"
+        >
+          <MenuIcon />
+        </IconButton>
+        <Menu
+          id="fade-menu"
+          MenuListProps={{
+            'aria-labelledby': 'fade-button',
+          }}
+          anchorEl={anchorEl}
+          open={open}
+          onClose={handleClose}
+          TransitionComponent={Fade}
+        >
+          <MenuItem onClick={handleMasterTracker}>Master Tracker</MenuItem>
+          <MenuItem onClick={handleNewEmployee}>Add Employee</MenuItem>
+        </Menu>
+      </div>
+      <div className="nav-title">
+        <h5>Employment Management Tracker</h5>
+        <img src="./images/sample-company.png" alt="" />
+      </div>
     </nav>
   );
 }

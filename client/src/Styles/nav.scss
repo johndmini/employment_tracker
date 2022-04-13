@@ -2,8 +2,20 @@
 
 .nav-container {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   background-color: rgb(192, 185, 185);
+
+  .nav-title {
+    display: flex;
+    margin-right: auto;
+
+    img {
+      width: 30px;
+      align-content: center;
+      padding: 2px;
+      margin-right: 5px;
+    }
+  }
 }
 
 .nav {
@@ -27,6 +39,25 @@ nav {
 @media screen and (max-width: 600px) {
   .nav {
     display: none;
+  }
+
+  .nav-container {
+    display: none;
+  }
+
+  .hamburger {
+    margin-right: auto;
+  }
+
+  .nav-title {
+    display: flex;
+    margin-right: 5px;
+    img {
+      width: 30px;
+      align-content: center;
+      padding: 2px;
+      margin-left: 5px;
+    }
   }
 
   .navMobile-container {
