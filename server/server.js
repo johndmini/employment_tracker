@@ -4,6 +4,8 @@ const mongoose = require('mongoose');
 const app = express();
 const cors = require('cors');
 require('dotenv').config();
+const PORT = process.env.PORT || 9000;
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/employeetracker';
 
 app.use(express.json());
 app.use(morgan('dev'));
@@ -31,9 +33,7 @@ app.get('/', (req, res) => {
   res.send('Test Deployment Success');
 });
 
-mongoose.connect(
-  'mongodb+srv://johndmini:1Timothy1_12@employment-tracker.amw5x.mongodb.net/myFirstDatabase?retryWrites=true&w=majority' ||
-    'mongodb://localhost:27017/employeetracker',
+mongoose.connect(MONGODB_URI,
   console.log('Connected to employee tracker database')
 );
 
@@ -52,6 +52,6 @@ app.use((err, req, res, next) => {
   return res.send({ errMsg: err.message });
 });
 
-app.listen(process.env.PORT || 9000, () => {
-  console.log('Express server listening on port 9000');
+app.listen(PORT, () => {
+  console.log(`Express server listening on port ${PORT}`);
 });
