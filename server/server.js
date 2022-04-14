@@ -3,9 +3,9 @@ const morgan = require('morgan');
 const mongoose = require('mongoose');
 const app = express();
 const cors = require('cors');
-require('dotenv').config();
+const dotenv = require('dotenv');
 const PORT = process.env.PORT || 9000;
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/employeetracker';
+dotenv.config();
 
 app.use(express.json());
 app.use(morgan('dev'));
@@ -33,7 +33,9 @@ app.get('/', (req, res) => {
   res.send('Test Deployment Success');
 });
 
-mongoose.connect(MONGODB_URI,
+mongoose.connect(
+  process.env.MONGODB_URI ||
+    'mongodb://localhost:27017/employeetracker',
   console.log('Connected to employee tracker database')
 );
 
