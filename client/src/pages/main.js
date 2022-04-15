@@ -47,7 +47,7 @@ export default function Main(props) {
           Additional Info Required:
           <p>{!employee.address && '* Mailing Address'}</p>
           <p>{!employee.department && '* Department'}</p>
-          <p>{!employee.emergencyContactPhone && '* Emergency Contact'}</p>
+          <p>{(!employee.emergencyContactPhone || !employee.emergencyContactAddress || !employee.emergencyContactFirstName || !employee.emergencyContactLastName || !employee.emergencyContactRelationship) && '* Emergency Contact'}</p>
         </h5>
       )}
       <p>

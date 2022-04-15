@@ -43,6 +43,9 @@ export default function NewEmployeePage(props) {
             First Name:
             <input
               name="firstName"
+              required
+              pattern="[a-zA-Z\s]+"
+              placeholder="Your First Name"
               value={newEmployee.firstName}
               onChange={handleChange}
             />
@@ -52,6 +55,9 @@ export default function NewEmployeePage(props) {
             Last Name:
             <input
               name="lastName"
+              required
+              pattern="[a-zA-Z\s]+"
+              placeholder="Your Last Name"
               value={newEmployee.lastName}
               onChange={handleChange}
             />
@@ -61,6 +67,8 @@ export default function NewEmployeePage(props) {
             E-mail:
             <input
               name="email"
+              required
+              placeholder="sample@email.com"
               value={newEmployee.email}
               onChange={handleChange}
             />
@@ -70,6 +78,10 @@ export default function NewEmployeePage(props) {
             Phone Number:
             <input
               name="phone"
+              required
+              pattern="[0-9]{3} [0-9]{3} [0-9]{4}"
+              minLength="10"
+              placeholder="123 456 7890"
               value={newEmployee.phone}
               onChange={handleChange}
             />
