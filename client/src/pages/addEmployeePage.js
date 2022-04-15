@@ -79,7 +79,7 @@ export default function NewEmployeePage(props) {
             <input
               name="phone"
               required
-              pattern="[0-9]{3} [0-9]{3} [0-9]{4}"
+              pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
               minLength="10"
               placeholder="123 456 7890"
               value={newEmployee.phone}
